@@ -12,8 +12,6 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "type", discriminatorType = DiscriminatorType.STRING)
 public class Film {
 
     @GeneratedValue
@@ -26,9 +24,4 @@ public class Film {
     @OrderColumn(name = "idActeur")
     private List<Acteur> acteurs;
 
-    public Film(String titre, String description, List<Acteur> acteurs) {
-        this.titre = titre;
-        this.description = description;
-        this.acteurs = acteurs;
-    }
 }
